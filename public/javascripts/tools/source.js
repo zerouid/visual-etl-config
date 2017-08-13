@@ -1,5 +1,5 @@
-var DAI = DAI || {};
-DAI.UI = DAI.UI || {};
+var EtlCfg = EtlCfg || {};
+EtlCfg.UI = EtlCfg.UI || {};
 (function () {
-    
-}).apply(DAI.UI);
+
+}).apply(EtlCfg.UI);

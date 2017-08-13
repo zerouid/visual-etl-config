@@ -1,5 +1,5 @@
-var DAI = DAI || {};
-DAI.UI = DAI.UI || {};
+var EtlCfg = EtlCfg || {};
+EtlCfg.UI = EtlCfg.UI || {};
 (function () {
     this.ToolElementView = joint.dia.ElementView.extend({
         render: function () {
@@ -45,4 +45,4 @@ DAI.UI = DAI.UI || {};
             '</g>'].join(''),
     });
 
-}).apply(DAI.UI);
+}).apply(EtlCfg.UI);

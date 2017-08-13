@@ -9,7 +9,7 @@
         width: 1000,
         height: 1000,
         model: graph,
-        elementView: DAI.UI.ToolElementView
+        elementView: EtlCfg.UI.ToolElementView
     });
 
     paper.on('cell:mouseenter', function (cellView) {
@@ -22,7 +22,7 @@
 
     function buildToolModel(toolCfg) {
         // return new joint.shapes.devs.Model({
-        return new DAI.UI.ToolModel({
+        return new EtlCfg.UI.ToolModel({
             position: { x: 5, y: 5 },
             size: { width: 90, height: 90 },
             inPorts: toolCfg.inputs,
