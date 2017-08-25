@@ -7,22 +7,26 @@
     var paper = new joint.dia.Paper({
         el: editor,
         width: 1000,
-        height: 1000,
+        height: 700,
         model: graph,
-        elementView: EtlCfg.UI.ToolElementView
+        cellViewNamespace: EtlCfg.UI,
+        background: {
+            color: '#eff0f1'
+        }
     });
 
-    paper.on('cell:mouseenter', function (cellView) {
-        cellView.highlight();
-    });
+    // paper.on('cell:mouseenter', function (cellView) {
+    //     cellView.highlight();
+    // });
 
-    paper.on('cell:mouseleave', function (cellView) {
-        cellView.unhighlight();
-    });
+    // paper.on('cell:mouseleave', function (cellView) {
+    //     cellView.unhighlight();
+    // });
 
     function buildToolModel(toolCfg) {
         // return new joint.shapes.devs.Model({
-        return new EtlCfg.UI.ToolModel({
+        var modelType = joint.util.getByPath(EtlCfg.UI, toolCfg.editor_type, '.') || EtlCfg.UI.Tool;
+        return new modelType({
             position: { x: 5, y: 5 },
             size: { width: 90, height: 90 },
             inPorts: toolCfg.inputs,
