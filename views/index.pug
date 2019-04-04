@@ -1,0 +1,39 @@
+extends layout
+
+block styles
+    link(rel='stylesheet', href='/lib/jointjs/joint.min.css')
+
+block scripts
+    script(src='/lib/lodash/lodash.min.js')
+    script(src='/lib/backbone/backbone-min.js')
+    script(src='/lib/jointjs/joint.min.js')
+    script(src='/javascripts/tools/base.js')
+    script(src='/javascripts/tools/source.js')
+    script(src='/javascripts/tools/store.js')
+    script(src='/javascripts/tools/transform.js')
+    script(src='/javascripts/app.js')
+    script(src='/javascripts/editor.js')
+
+block content
+  nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+    span.navbar-brand Edit ETL Interface Config
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavDropdown')
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarNavDropdown
+      ul.nav.navbar-nav.ml-auto
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Select Instance...
+            span.caret
+          .dropdown-menu.dropdown-menu-right#instances
+            a.dropdown-item.disabled(href='#') Loading...
+        li.nav-item.dropdown.disabled
+          a.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false') Select Interface...
+            span.caret
+          ul.dropdown-menu.dropdown-menu-right#interfaces
+            a.dropdown-item.disabled(href='#') Loading...
+  .container-fluid
+    .row.row-offcanvas.row-offcanvas-left
+      .col-xs-6.col-sm-3.col-md-3#sidebar
+        #toolbox.panel-group
+      .col-xs-12.col-sm-9
+        #editor

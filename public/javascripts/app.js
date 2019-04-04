@@ -20,9 +20,9 @@
         instancesSelectToggle.text($el.text());
         $.getJSON('/api/config/instance/' + instanceId + '/interfaces').done(function (data) {
             var items = $.map(data, function (val) {
-                var item = $('<a href="#" data-interface-id="' + val.id + '">' + val.name + '</a>');
+                var item = $('<a class="dropdown-item" href="#" data-interface-id="' + val.id + '">' + val.name + '</a>');
                 item.on('click', function () { select_interface($(this)); })
-                return $('<li></li>').append(item);
+                return item;
             });
             interfacesSelect.empty().append(items);
             interfacesSelect.closest('.disabled').removeClass('disabled');
@@ -31,9 +31,9 @@
 
     $.getJSON('/api/config/instance').done(function (data) {
         var items = $.map(data, function (val) {
-            var item = $('<a href="#" data-instance-id="' + val.id + '">' + val.name + '</a>');
+            var item = $('<a class="dropdown-item" href="#" data-instance-id="' + val.id + '">' + val.name + '</a>');
             item.on('click', function () { select_instance($(this)); })
-            return $('<li></li>').append(item);
+            return item;
         });
         instancesSelect.empty().append(items);
     });

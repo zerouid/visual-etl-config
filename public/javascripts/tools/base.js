@@ -112,6 +112,7 @@ EtlCfg.UI = EtlCfg.UI || {};
 
         initialize: function () {
             _.bindAll(this, 'show', 'teardown', 'render');
+            this.childView
             this.render();
         },
 
